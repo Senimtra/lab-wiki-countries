@@ -11,11 +11,10 @@ function App() {
       <Navbar />
       <div className="container-fluid">
         <CountriesList />
-        <Route path="/countries/:cca3" component={CountryDetails} />
+        <Switch>
+          <Route path="/countries/:cca3" component={CountryDetails} />
+        </Switch>
       </div>
-      <Switch>
-        <Route path="/" component={CountriesList} exact />
-      </Switch>
     </div>
   );
 }

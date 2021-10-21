@@ -34,21 +34,18 @@ class CountryDetails extends Component {
   render() {
     return (
       (this.state.country && (
-        <div>
+        <div id="country-details">
           <h1>{this.state.country.name.common}</h1>
-          <hr></hr>
           <div id="capital">
             <div>Capital</div>
             <span>{this.state.country.capital}</span>
           </div>
-          <hr></hr>
           <div id="area">
             <div>Area</div>
             <span>
               {this.state.country.area} km<sup>2</sup>
             </span>
           </div>
-          <hr></hr>
           <div id="borders">
             <div>Borders</div>
             <ul>

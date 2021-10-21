@@ -16,9 +16,9 @@ class CountriesList extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul id="countries-list">
           {this.state.list.map((country) => (
-            <li key={country.ccn3}>
+            <li key={country.ccn3} className="card">
               <Link to={`/countries/${country.cca3}`}>
                 <img
                   src={`https://www.countryflags.io/${country.cca2}/flat/64.png`}

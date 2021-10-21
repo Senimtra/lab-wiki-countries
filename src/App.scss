@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
 .container-fluid {
   display: flex;
 }
@@ -6,7 +20,44 @@
 #area,
 #borders {
   div {
-    width: 8em;
+    width: 7em;
   }
   display: flex;
+  padding: 1em 0 0 1em;
+  margin-top: 1em;
+  border-top: 2px solid darkgrey;
+}
+
+#countries-list {
+  width: 18em;
+  list-style: none;
+  img {
+    width: 1.5em;
+    margin-right: 0.5em;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  height: 40vh;
+  overflow-y: scroll;
+  margin: 2em 2em 0 0;
+}
+
+.card {
+  padding: 1em;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+#country-details {
+  width: 24em;
+  margin-top: 2em;
+  a {
+    text-decoration: none;
+  }
 }
