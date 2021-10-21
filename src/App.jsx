@@ -3,7 +3,6 @@ import './App.scss';
 import Navbar from './components/Navbar';
 import CountriesList from './components/CountriesList';
 import CountryDetails from './components/CountryDetails';
-import COUNTRIES_LIST from './countries.json';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -16,7 +15,11 @@ class App extends Component {
   }
 
   loadCountriesList() {
-    this.setState({ countriesList: COUNTRIES_LIST });
+    fetch(
+      'https://raw.githubusercontent.com/mledoze/countries/master/countries.json'
+    )
+      .then((response) => response.json())
+      .then((data) => this.setState({ countriesList: data }));
   }
 
   render() {
@@ -26,7 +29,15 @@ class App extends Component {
         <div className="container-fluid">
           <CountriesList countries={this.state.countriesList} />
           <Switch>
-            <Route path="/countries/:cca3" component={CountryDetails} />
+            <Route
+              path="/countries/:cca3"
+              render={(props) => (
+                <CountryDetails
+                  countries={this.state.countriesList}
+                  {...props}
+                />
+              )}
+            />
           </Switch>
         </div>
       </div>
