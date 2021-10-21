@@ -20,6 +20,10 @@ class CountriesList extends Component {
           {this.state.list.map((country) => (
             <li key={country.ccn3}>
               <Link to={`/countries/${country.cca3}`}>
+                <img
+                  src={`https://www.countryflags.io/${country.cca2}/flat/64.png`}
+                  alt={country.cca2}
+                />{' '}
                 {country.name.common}
               </Link>
             </li>

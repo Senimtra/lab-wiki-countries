@@ -1,0 +1,12 @@
+.container-fluid {
+  display: flex;
+}
+
+#capital,
+#area,
+#borders {
+  div {
+    width: 8em;
+  }
+  display: flex;
+}
